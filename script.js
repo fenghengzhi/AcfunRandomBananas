@@ -2,7 +2,7 @@
 // @name         Acfun随机送香蕉
 // @namespace    https://greasyfork.org/users/63665
 // @homepage     https://greasyfork.org/scripts/22845
-// @version      0.0.6
+// @version      0.0.7
 // @description  Acfun随机送香蕉500次
 // @author       You
 // @match        http://www.acfun.tv
