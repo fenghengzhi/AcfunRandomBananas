@@ -2,7 +2,7 @@
 // @name         Acfun随机送香蕉
 // @namespace    https://greasyfork.org/users/63665
 // @homepage     https://greasyfork.org/scripts/22845
-// @version      0.0.7
+// @version      0.0.8
 // @description  Acfun随机送香蕉500次
 // @author       You
 // @match        http://www.acfun.tv
@@ -10,7 +10,7 @@
 // @grant        none
 // @icon         http://cdn.aixifan.com/ico/favicon.ico
 // @note         github更新测试
-// @run-at       document-idle
+// @run-at       document-end
 // ==/UserScript==
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
