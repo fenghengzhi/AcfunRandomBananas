@@ -12,20 +12,6 @@
 // @note         github更新测试
 // @run-at       document-idle
 // ==/UserScript==
-function getCookie(c_name) {
-    if (document.cookie.length > 0) {
-        c_start = document.cookie.indexOf(c_name + '=');
-        if (c_start != -1) {
-            c_start = c_start + c_name.length + 1;
-            c_end = document.cookie.indexOf(';', c_start);
-            if (c_end == -1) {
-                c_end = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(c_start, c_end));
-        }
-    }
-    return '';
-}
 function acPostBananas(_cid, _uid) {
     $.post("/banana/throwBanana.aspx", {
         count: "5",
@@ -42,11 +28,13 @@ function acPostBananas(_cid, _uid) {
     });
 }
 (function(){
-    if (getCookie('auth_key') !== '') {
+    userId=$.cookie('auth_key');
+    if (userId !== '' && userId !== null) {
         if(confirm('检测到已登录，是否执行一键随机送蕉500次？')){
-            userId=getCookie('auth_key');
-            for(i=1;i<500;i++){
-                contentid=Math.ceil(Math.random()*(3100000-1)+1);
+            max=3100000;
+            min=1;
+            for(i=1;i<=500;i++){
+                contentid=Math.ceil(Math.random()*(max-min)+min);
                 console.log(contentid);
                 acPostBananas(contentid,userId);
             }
