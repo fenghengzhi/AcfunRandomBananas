@@ -36,7 +36,7 @@ function acPostBananas(_cid, _uid) {
         if (status == "success") {
             console.log(data.result);
         } else {
-            console.log("自动5蕉：网络错误");
+            console.log("网络错误");
         }
 
     });
